@@ -15,7 +15,7 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(name)
-    Student.where(Student.arel_table[:name].eq(name))
+    Student.find_by(name: name)
   end
 
 end
